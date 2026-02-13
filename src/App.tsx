@@ -56,7 +56,7 @@ function App() {
       <div className="w-full max-w-md space-y-6">
         {/* Header */}
         <div className="text-center space-y-1">
-          <h1 className="text-3xl font-bold">📦 K8s Study App</h1>
+          <h1 className="text-3xl font-bold">📦 K8s Study App v2</h1>
           <p className="text-sm text-gray-400">
             Backend: <code className="text-blue-400">{API_URL}</code>
           </p>
