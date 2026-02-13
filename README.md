@@ -1,5 +1,7 @@
 # Web Frontend
 
+trigger update readme
+
 React + Vite + Tailwind CSS frontend that connects to the Go backend server.
 
 ## How It Works
