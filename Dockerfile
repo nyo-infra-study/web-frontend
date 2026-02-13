@@ -3,6 +3,9 @@ FROM node:22-alpine AS build
 
 WORKDIR /app
 
+# Build argument for API URL (passed during docker build)
+ARG VITE_API_URL=http://localhost:8080/api
+
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
@@ -12,6 +15,10 @@ RUN pnpm install --frozen-lockfile
 
 # Copy source and build
 COPY . .
+
+# Make build arg available as env var for Vite
+ENV VITE_API_URL=${VITE_API_URL}
+
 RUN pnpm build
 
 # Stage 2: Serve with nginx
