@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
 
@@ -116,4 +117,14 @@ function App() {
   );
 }
 
-export default App;
+function Router() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/web" element={<App />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default Router;
