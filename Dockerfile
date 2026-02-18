@@ -24,8 +24,14 @@ RUN pnpm build
 # Stage 2: Serve with nginx
 FROM nginx:alpine
 
-# Copy built assets to nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+# Remove default nginx config
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy built assets to nginx (into /web subdirectory)
+COPY --from=build /app/dist /usr/share/nginx/html/web
 
 EXPOSE 80
 
