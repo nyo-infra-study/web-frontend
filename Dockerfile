@@ -4,7 +4,7 @@ FROM node:22-alpine AS build
 WORKDIR /app
 
 # Build argument for API URL (passed during docker build)
-ARG VITE_API_URL=http://localhost:8080/api
+ARG VITE_API_URL=http://localhost:9000/api
 
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate

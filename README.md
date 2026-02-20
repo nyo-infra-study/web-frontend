@@ -8,7 +8,7 @@ React + Vite + Tailwind CSS frontend that connects to the Go backend server.
 
 - Fetches `GET /data` from the backend on load to display current `name` and `message`.
 - Sends `PATCH /data` with updated fields when you click Save.
-- The backend URL is configured via `VITE_API_URL` env var (defaults to `http://localhost:8080`).
+- The backend URL is configured via `VITE_API_URL` env var (defaults to `http://localhost:9000`).
 
 > **Note:** Vite bakes `VITE_*` env vars at **build time**, not runtime. So the API URL is embedded into the JS bundle during `pnpm build`.
 
@@ -21,11 +21,11 @@ cp .env.example .env
 # Install dependencies
 pnpm install
 
-# Run dev server (connects to localhost:8080 by default)
+# Run dev server (connects to localhost:9000 by default)
 pnpm dev
 ```
 
-Make sure the backend server is running on port 8080.
+Make sure the backend server is running on port 9000.
 
 ## Docker
 
